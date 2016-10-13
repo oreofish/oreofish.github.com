@@ -7,8 +7,8 @@ title: 渐渐的
 subtitle: 的的的的的的的
 description:
 author: oreofish
-language: zh_CN
-timezone: Asia/Beijing
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,9 +63,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: again
+theme: Hacker
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:oreofish/oreofish.github.com.git
+  branch: master
