@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>为教学目的构建浏览器中的Linux | 渐渐的 | 的的的的的的的</title>
+
+  
+  <meta name="author" content="oreofish">
+  
+
+  
+  <meta name="description" content="反思Linux桌面版我想用某种方式普及Linux基础知识，让想学的人可以更快入门。
+这来源于我的一个困惑，我们做的Linux桌面版是为了让普通用户可以方便的听歌看片上网玩游戏，但是很多人用我们的系统，初衷反而不是为了听歌看片上网玩游戏，而是为了学习Linux。也许做一个“好用的Linux”，而不是一">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="为教学目的构建浏览器中的Linux"/>
+
+  <meta property="og:site_name" content="渐渐的"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="渐渐的" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">渐渐的</a>
+    </h1>
+    <p class="site-description">的的的的的的的</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>为教学目的构建浏览器中的Linux</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2012/11/30/wei-jiao-xue-mu-de-gou-jian-liu-lan-qi-zhong-de-linux/" rel="bookmark">
+        <time class="entry-date published" datetime="2012-11-30T02:21:00.000Z">
+          2012-11-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="反思Linux桌面版"><a href="#反思Linux桌面版" class="headerlink" title="反思Linux桌面版"></a>反思Linux桌面版</h2><p>我想用某种方式普及Linux基础知识，让想学的人可以更快入门。</p>
+<p>这来源于我的一个困惑，我们做的Linux桌面版是为了让普通用户可以方便的听歌看片上网玩游戏，但是很多人用我们的系统，初衷反而不是为了听歌看片上网玩游戏，而是为了学习Linux。也许做一个“好用的Linux”，而不是一个”好用的windows“才是一个Linux桌面版要做的事情。</p>
+<p>回想一下现在的各种操作系统，UNIX-like还是主力，苹果系、Android系、Linux系其实都是来自操作系统的老祖宗UNIX，除了来自于DOS的windows由于其多年在桌面市场的垄断地位还霸占着桌面市场，其他非UNIX的系统几乎都消失了，当然，UNIX自己由于市场的原因也已经消失了。实际使用中的操作系统基本分为四类，桌面、服务器、移动、嵌入。单纯的嵌入逐渐势微，就不提了。移动领域近几年出了好几个系统，能活下来的只有iOS和Android，还有后来的windows系统，其他的由于产业链的原因，基本只能是参与者，很难翻身。服务器是UNIX的天下，现在基本是Linux一家独大，只是发行版的不同，在可预见的将来也不会有什么变化。桌面由于产业链的原因，被windows控制着，近几年Mac在这个领域有反弹，Linux桌面版做了很多年，占有率一直很低。看看行业现状基本就能了解，想用Linux的人，基本是想往服务器方向走的，其他爱好者是出于玩的目的开始使用的。能单纯为用Linux桌面而用下来的人，比例很小。</p>
+<p>如果以上分析成立，那么提供一个能够听歌看片上网玩游戏的系统，反而无法满足Linux爱好者的需求，他们真正想要的，只是一个“好用的Linux”。用某种方式，让初学者更容易的体验Linux，发现Linux的强大，会是一个更有价值更有意义的事情。</p>
+<h2 id="目标场景"><a href="#目标场景" class="headerlink" title="目标场景"></a>目标场景</h2><p>为想要学习linux的人提供快捷的开始教程，我们提供的方式足够简单，让他在有这个想法后，通过简单的步骤就可以开始体验。无论是新手想体验还是老手临时需要查东西，都可以马上开始。尽量降低初始成本。</p>
+<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>最方便的方式就是<strong>打开浏览器，一切就开始了</strong>。但是这实现起来并不容易，虽然已经有先辈实现了javascript虚拟机来实现这个功能，但是想要结合上自己的东西，还是很困难。需要完成一系列的工作:</p>
+<ul>
+<li>首先，要有一个浏览器中的终端，放在浏览器里除了可以让终端容易操作且更好看，还方便我们加入在线教学功能。</li>
+<li>然后这个终端要执行一个shell解释器。这个shell可以是模拟的，能满足教学目的就行，也可能是真的，或者跑在本机，或者跑在虚拟机中，或者跑在服务器上。</li>
+<li>然后，就是所有的外围命令，这些命令也是类似上面，要么真跑，要么假跑。</li>
+</ul>
+<p>如果把上面的工作分成几步实现，就是：</p>
+<ul>
+<li>首先实现一个更好的本地终端，用node-webkit + pty.js + xterm.js可以实现。</li>
+<li>然后实现一个可以在浏览器里直接操作的终端。</li>
+<li>最终能够实现一个连接远程的终端。</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Linux-Web/">Linux Web</a>
+    </span>
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2016 oreofish
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
